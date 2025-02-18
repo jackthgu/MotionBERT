@@ -7,6 +7,7 @@ import os.path as osp
 from smplx import SMPL as _SMPL
 from smplx.utils import ModelOutput, SMPLOutput
 from smplx.lbs import vertices2joints
+import os
 
 
 # Map joints to SMPL joints
@@ -50,7 +51,13 @@ JOINT_NAMES = [
 ]
 
 JOINT_IDS = {JOINT_NAMES[i]: i for i in range(len(JOINT_NAMES))}
-SMPL_MODEL_DIR = 'data/mesh'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.join(current_dir, "../../")
+
+
+patched_path = os.path.join(root_dir,  "data", "mesh")
+
+SMPL_MODEL_DIR = patched_path
 H36M_TO_J17 = [6, 5, 4, 1, 2, 3, 16, 15, 14, 11, 12, 13, 8, 10, 0, 7, 9]
 H36M_TO_J14 = H36M_TO_J17[:14]
 

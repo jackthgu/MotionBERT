@@ -1,0 +1,1 @@
+python infer_wild_mesh4.py --vid_path  videoplayback.mp4 --json_path alphapose-results.json --out_path test_mesh --ref_3d_motion_path test/X3D.npy
